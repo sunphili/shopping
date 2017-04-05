@@ -1,0 +1,25 @@
+<div class="shop-addlist" ng-controller="addlistCtrl">
+ <page-header></page-header>
+ <div class="container-fluid">
+ <form>
+ 	<div class="form-group">
+ 		<label for="name">收货人姓名</label>
+ 		<input type="text" name="name" id="name" class="form-control" placeholder="" ="输入收货人姓名" ng-model="addres.name">
+ 	</div>
+ 	<div class="form-group">
+ 		<label for="tel">手机号码</label>
+ 		<input type="text" name="tel" id="tel" class="form-control" placeholder="" ="手机号码" ng-pattern="/^1[34578]\d{9}$/" ng-model="addres.tel">
+ 	</div> 	
+ 	<!-- <div class="form-group">
+ 		<label for="city">所在地区</label>
+ 		<input type="text" name="city" id="city" class="form-control" placeholder="" ="省/市/区" ng-model="addres.city">
+ 	</div> -->
+ 	<div class="form-group">
+ 		<label for="addres">详细地址</label>
+ 		<textarea class="form-control" rows="2" placeholder="街道门牌信息" ng-model="addres.cnt"></textarea>
+ 	</div>
+ 	<button type="button" class="btn btn-danger btn-block" ng-click="saveAdds()">保存</button> 	
+ 	</form>
+ </div>
+ <page-footer></page-footer>
+</div>

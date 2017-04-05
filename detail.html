@@ -1,0 +1,29 @@
+<div class="shop-detail" ng-controller="detailCtrl">
+<page-header></page-header>
+<div class="container-fluid">
+	<div class="carousel">
+		<img ng-src={{detail.img}}>
+	</div>
+	
+	<div class="main-layout">
+	  <ul class="detail-list">
+	    <li class="li1">
+		<h1>{{detail.title}}</h1>
+		<div class="row">
+			<div class="col-xs-6">{{detail.price}}</div>
+			<div class="col-xs-6">
+				<button class="btn btn-warning" ng-click="buy(detail,detail.id)">加入购物车</button>
+			</div>
+		</div>
+		</li>
+		<li class="li2">
+			<h1>商品详情</h1>
+			<div class="row">{{detail.cnt}}</div>
+		</li>
+	   </ul>
+
+	</div>
+</div>
+<page-footer></page-footer>
+</div>
+

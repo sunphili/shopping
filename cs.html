@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>angularFilter</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<script type="text/javascript" src="js/angular.min.js" ></script>
+<script>
+    var app = angular.module("myApp",[]);
+
+app.service("products",function(){
+return [{
+id : 1111,
+name : "iphone",
+price : 5000
+},{
+id : 2222,
+name : "iphone 4",
+price : 1993
+},{
+id : 1091,
+name : "iphone 5",
+price : 2893
+},{
+id : 1792,
+name : "iphone 6",
+price : 4500
+}];
+});
+
+
+app.controller("productController",function($scope,products){
+$scope.products = products;//Angular自动注入
+
+//排序条件
+$scope.order = "-";//默认是升序,-表示降序
+$scope.orderType = "id" ;//以id来排序,不能直接在页面以id这个字段排序
+
+$scope.changeOrder = function(type){
+$scope.orderType = type ;
+//如果本来是降序，就变为升序，如果是升序，就变为降序
+if($scope.order===''){
+$scope.order = '-';
+}else{
+$scope.order = '';
+}
+}
+});
+</script>
+</head>
+<body ng-app="myApp" ng-controller="productController">
+
+<div class="container">
+<form class="navbar-form pull-left">
+<input type="text" class="span2" placeholder="Search" ng-model="search.id">
+</form>
+<table class="table">
+<thead>
+<tr>
+<!--dropup：true 这个class就显示，即升序，否则不显示！-->
+<!--注意，这里是ng-class，还有droupup:order中间是没有任何空格的！！！！-->
+<th ng-class="{dropup:order ===''}" ng-click="changeOrder('id')">
+产品编号<span class="caret"></span>
+</th>
+<th ng-class="{dropup:order ===''}" ng-click="changeOrder('name')">
+产品名称<span class="caret"></span>
+</th>
+<th ng-class="{dropup:order === ''}" ng-click="changeOrder('price')">
+产品价格<span class="caret"></span>
+</th>
+</tr>
+</thead>
+<tbody>
+<!--<tr ng-repeat="product in products | filter:{id:search}">-->
+<!--order+orderType注意这两个字段是有顺序的 不能反着写-->
+<tr ng-repeat="product in products | filter:search | orderBy : order+orderType">
+<td>
+{{product.id}}
+
+</td>
+<td>
+{{product.name}}
+
+</td>
+<td>
+{{product.price | currency : "(RMB)"}}
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

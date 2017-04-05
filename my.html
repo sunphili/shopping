@@ -1,0 +1,68 @@
+<div class="shop-set" ng-controller="myCtrl">
+	<page-header></page-header>
+	<div class="container-fluid">
+	 	<div class="imgfile" img-upload></div>   
+		 <label for="file" class="pic"><img ng-src="{{thumb.imgSrc}}" class="img-head img-circle" ng-show="thumb.imgSrc"/></label> 
+		<ul class="list">
+		  	<li>
+		  		<p>昵称</p>
+		  		<sapn class="right" ng-click="vm.activeTab=1">{{user.username}}<i class="icon2 icon-right"></i></span>
+		  	</li>
+		  	<li>
+		  		<p>性别</p>
+		  		<span class="right" ng-click="vm.activeTab=2">{{sex}}<i class="icon2 icon-right"></i></span>
+		  	</li>
+		  	<li>
+		  		<p>联系方式</p>
+		  		<span class="right" ng-click="vm.activeTab=3">{{tel}}<i class="icon2 icon-right"></i></span>
+		  	</li>
+		  	<li>
+		  		<p>收货地址</p>
+		  		<span class="right" ng-click="addres()">{{a}}<i class="icon2 icon-right"></i></span>
+		  	</li>
+		  </ul>
+	</div> 
+	<page-footer></page-footer>
+	<div class="shadow" ng-show="vm.activeTab"></div>
+	
+	<div class="rename">
+	<!-- 修改用户名 -->
+	   <div class="sname" id="sname" ng-show="vm.activeTab==1">
+		<div class="dialog-header">
+			<h4>修改用户名</h4>
+		</div>
+		<div class="dialog-cnt">
+			<div class="form-group has-success">
+				<input type="text" class="form-control" placeholder="Default input" ng-model="user.username">
+				<label>用户名现在没有限制要求，可以任意填写</label>
+			</div>
+		</div>
+		<div class="dialog-footer">
+			<button type="button" class="btn btn-default btn-block btn-lg" ng-click="close()">保存</button>
+		</div>
+		</div>
+		<!--修改性别  -->
+		<div class="sex" id="sex" ng-show="vm.activeTab==2">
+		  <div class="dialog-cnt">
+			<div class="form-group">
+				<button type="button" class="btn btn-default btn-block" ng-click="sex='男';vm.activeTab=false">男</button>
+				<button type="button" class="btn btn-default btn-block" ng-click="sex='女';vm.activeTab=false">女</button>
+			</div>
+		</div>
+		</div>
+		<!-- 修改电话 -->
+		<div class="tel" id="tel" ng-show="vm.activeTab==3">
+		<form name="telForm" novalidate>
+		  <div class="dialog-cnt">
+			<div class="form-group">
+				<input type="text" ng-model="tel" name="tel" class="form-control" placeholder="tel" ng-minlength='11' ng-maxlength='11' ng-pattern="/^1[34578]\d{9}$/" required>
+				 <p class="text-danger" ng-show="telForm.tel.$error.pattern">请输入正确的手机号码</p>
+			</div>
+		  </div>
+		  <div class="dialog-footer">
+			<button type="button" class="btn btn-default btn-block btn-lg" ng-click="close()" ng-disabled="telForm.$invalid">保存</button>
+		  </div>
+		  </form>
+		</div>
+	</div>
+</div>

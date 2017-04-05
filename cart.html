@@ -1,0 +1,52 @@
+  <div class="shop-cart" ng-controller="cartCtrl">
+  	<page-header></page-header>
+  	<div class="container-fluid">
+    <div class="nolist" ng-show='hashop==false'>
+      <img src="images/no.png">
+      <p>购物车还是空的，去逛逛吧！</p>
+    </div>
+     <div class="showlist" ng-show='hashop==true'>
+  		<div class="row cart-edit">
+  			<div class="col-xs-6"> 				
+  				<input id="chk" type="checkbox" ng-model="select_all" ng-change="selectAll()">
+  			</div>
+  			<div class="col-xs-6 edit-txt">
+  				<label for="chk">{{edit}}</label>
+  			</div>
+  		</div>
+  		<table width="100%">
+  			<tr ng-repeat="(ind,v) in list">
+  				<td>
+  					<!-- <label for="chk"></label> -->
+  					<input type="checkbox" class="select-one" ng-model="v.checked" ng-change="selectOne()">
+  				</td>
+  				<td><img ng-src="{{v.img}}" width="105"></td>
+  				<td>
+  					<h4>{{v.title}}</h4>
+					<p>{{v.cnt}}</p>
+					<p class="d-price"> 
+						<span class="price-num">{{v.price|currency:'￥'}}</span> 						
+						<span class="input-group count">
+						   <span class="input-group-addon minus" ng-click="reduce(v,ind)">-</span>
+						   <input type="text" class="number form-control input-sm" value="1" ng-model="varlist.itemNum[ind]">
+						   <span class="input-group-addon plus" ng-click="add(v,ind)">+</span>
+						</span> 
+					</p>
+  				</td>
+  			</tr>
+  		</table>
+  		<div class="settlement">
+		    <div class="row">
+		    	<div class="col-xs-8">
+		    		<span class="total_txt">总计：</span>
+		     		<span class="total_num">{{varlist.total|currency:'￥'}}</span>
+		    	</div>
+		    	<div class="col-xs-4">
+		    		<a href="#" class="oconfirm">去结算</a>
+		    	</div>
+		    </div>
+		  </div>
+      </div>
+  		</div>
+  	<page-footer></page-footer>	
+  </div>
