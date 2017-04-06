@@ -147,6 +147,7 @@ m1.controller('detailCtrl',function($scope,local,$state,$stateParams){
 })
 m1.directive('runoobDirective',function(){
 	return{
+		restrict:'AE',
 		template : "<h1>自定义指令!</h1>"
 	}
 })
