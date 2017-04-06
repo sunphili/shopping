@@ -149,14 +149,12 @@ m1.directive('topDirective',function(){
 	return{
 		restrict:'AE',
 		templateUrl : 'header.html',
-		replace:true
 	}
 })
 m1.directive('bottomDirective',function(){
 	return{
 		restrict:'AE',
 		templateUrl :'footer.html',
-		replace:true
 	}
 })
 m1.controller('cartCtrl',function($scope,local){
