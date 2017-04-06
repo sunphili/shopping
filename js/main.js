@@ -148,13 +148,15 @@ m1.controller('detailCtrl',function($scope,local,$state,$stateParams){
 m1.directive('pageHeader',function(){
 	return{
 		restrict:'AE',
-		templateUrl :'header.html'
+		templateUrl :'header.html',
+		replace:true
 	}
 })
 m1.directive('pageFooter',function(){
 	return{
 		restrict:'AE',
-		templateUrl :'footer.html'
+		templateUrl :'footer.html',
+		replace:true
 	}
 })
 m1.controller('cartCtrl',function($scope,local){
