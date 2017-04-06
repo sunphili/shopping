@@ -37,7 +37,7 @@ m1.config(function($stateProvider,$urlRouterProvider){
 		.state('login',{
 			url:'/',
 			templateUrl:'login.html',
-
+			controller:'loginCtrl'
 		})
 		.state('list',{
 			url:'/list',
@@ -54,17 +54,17 @@ m1.config(function($stateProvider,$urlRouterProvider){
 		.state('cart',{
 			url:'/cart',
 			templateUrl:'cart.html',
-	
+			controller:'cartCtrl'
 		})
 		.state('my',{
 			url:'/my/:adds',
 			templateUrl:'my.html',
-
+			controller:'myCtrl'
 		})
 		.state('addres',{
 			url:'/addres',
 			templateUrl:'addres.html',
-
+			controller:'addresCtrl'
 		})
 		.state('addresList',{
 			url:'/addresList/:id/:index',
