@@ -25,19 +25,17 @@ m1.controller('loginCtrl',function($scope,$state,$window,local,user){
 	$scope.user=user;
 	$window.localStorage.clear()
 	$scope.submitForm=function(){
-		console.log(1)
 		local.set('admin',user.username);
 		if($scope.user.username=='test'&&$scope.user.password=='test'){	
-			$state.go('list',{"username":$scope.user.username,"password":$scope.user.password},{reload:true})
+			$state.go('list',{reload:true})
 		}
 	}		
 })
 m1.config(function($stateProvider,$urlRouterProvider){
-	$urlRouterProvider.otherwise('/index')
+	$urlRouterProvider.otherwise('/')
 	$stateProvider
-		.state('/index',{
-			params:{"username":null,"password":null},
-			url:'/index',
+		.state('/',{
+			url:'/',
 			templateUrl:'index.html',
 			cache:false,
 		})
@@ -73,7 +71,9 @@ m1.config(function($stateProvider,$urlRouterProvider){
 			templateUrl:'addresList.html',
 			cache:false
 		})
-})
+}).run(function($rootScope,$state){
+            $rootScope.$state = $state;
+       })
 
 //list
 m1.service('data',function(){
