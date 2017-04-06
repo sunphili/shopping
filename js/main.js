@@ -148,7 +148,7 @@ m1.controller('detailCtrl',function($scope,local,$state,$stateParams){
 m1.directive('runoobDirective',function(){
 	return{
 		restrict:'AE',
-		template : "<div class='navbar navbar-fixed-top bg-green'>自定义指令!</div>"
+		templateUrl : 'header.html'
 	}
 })
 m1.directive('pageFooter',function(){
