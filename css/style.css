@@ -3,6 +3,7 @@ html{font-size: 100px;}
 html,body{height:100%; background-color: #eee; color: #666}
 a{text-decoration:none}
 /*login*/
+.wrap{height: 100%}
 .login{padding:20px;  height: 100%; background:url(../images/bg.jpg);background-size: cover;}
 .login .logincnt{/*position: absolute;top:50%;left:50%; margin-left:-1.4rem;*/margin-top: 1.2rem;}
 .login .inputLogin{outline:0;background-color: rgba(255,255,255,0.2); padding: 0 0.4rem;color: #000; border: none; transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;width:100%; color:#fff;}

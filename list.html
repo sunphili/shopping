@@ -12,11 +12,11 @@
 			</div>
 			<div class="col-xs-8">
 			  <div ng-click="detailList($index)">
-				<h4>{{v.title}}</h4>
-				<p>{{v.cnt}}</p>
+				<h4 ng-bind="v.title"></h4>
+				<p ng-bind="v.cnt"></p>
 			  </div>
 			  <p class="d-price">
-	               <span class="price-num">{{v.price|currency:'￥'}}</span>
+	               <span class="price-num" ng-bind="v.price|currency:'￥'"></span>
 	               <span class="buy-car" ng-click="buy(v,$index)">
 	               	<i class="icon2 icon_buy"></i>
 	               </span>
