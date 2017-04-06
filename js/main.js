@@ -27,7 +27,7 @@ m1.controller('loginCtrl',function($scope,$state,$window,local,user){
 	$scope.submitForm=function(){
 		local.set('admin',user.username);
 		if($scope.user.username=='test'&&$scope.user.password=='test'){	
-			$state.go('list')
+			$state.go('list',{reload:true})
 		}
 	}		
 })
