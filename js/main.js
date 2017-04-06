@@ -28,8 +28,7 @@ m1.controller('loginCtrl',function($scope,$state,$window,local,user){
 		console.log(1)
 		local.set('admin',user.username);
 		if($scope.user.username=='test'&&$scope.user.password=='test'){	
-			// $state.go('list',{reload:true})
-			$state.href('list')
+			$state.go('list',{reload:true})
 		}
 	}		
 })
