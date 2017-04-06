@@ -146,11 +146,17 @@ m1.controller('detailCtrl',function($scope,local,$state,$stateParams){
 	}
 })
 m1.directive('pageHeader',function(){
-	return{
-		restrict:'AE',
-		template :'<div>Hello world</div>',
-		replace:'true'
-	}
+	return {
+
+restrict: 'AE' ,
+
+replace: 'true' ,
+
+template: '<h3>Hello World!!</h3>'
+
+};
+
+
 })
 m1.directive('pageFooter',function(){
 	return{
