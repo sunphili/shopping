@@ -145,13 +145,13 @@ m1.controller('detailCtrl',function($scope,local,$state,$stateParams){
 		$state.go('cart',{reload:true})
 	}
 })
-m1.directive('runoobDirective',function(){
+m1.directive('topDirective',function(){
 	return{
 		restrict:'AE',
 		templateUrl : 'header.html'
 	}
 })
-m1.directive('pageFooter',function(){
+m1.directive('bottomDirective',function(){
 	return{
 		restrict:'AE',
 		templateUrl :'footer.html',
