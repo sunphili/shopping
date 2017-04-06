@@ -28,13 +28,19 @@ m1.controller('loginCtrl',function($scope,$state,$window,local,user){
 		console.log(1)
 		local.set('admin',user.username);
 		if($scope.user.username=='test'&&$scope.user.password=='test'){	
-			$state.go('list',{reload:true})
+			$state.go('list',{"username":$scope.user.username,"password":$scope.user.password},{reload:true})
 		}
 	}		
 })
 m1.config(function($stateProvider,$urlRouterProvider){
 	$urlRouterProvider.otherwise('/')
 	$stateProvider
+		.state('/',{
+			params:{"username":null,"password":null},
+			url:'/',
+			templateUrl:'login.html',
+			cache:false,
+		})
 		.state('list',{
 			url:'/list',
 			templateUrl:'list.html',
