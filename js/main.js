@@ -148,7 +148,7 @@ m1.controller('detailCtrl',function($scope,local,$state,$stateParams){
 m1.directive('pageHeader',function(){
 	return{
 		restrict:'AE',
-		templateUrl :'header.html',
+		templateUrl :'<div>头部</div>',
 		replace:true
 	}
 })
