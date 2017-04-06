@@ -33,12 +33,12 @@ m1.controller('loginCtrl',function($scope,$state,$window,local,user){
 	}		
 })
 m1.config(function($stateProvider,$urlRouterProvider){
-	$urlRouterProvider.otherwise('/')
+	$urlRouterProvider.otherwise('/index')
 	$stateProvider
-		.state('/',{
+		.state('/index',{
 			params:{"username":null,"password":null},
-			url:'/',
-			templateUrl:'login.html',
+			url:'/index',
+			templateUrl:'index.html',
 			cache:false,
 		})
 		.state('list',{
