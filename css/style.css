@@ -4,7 +4,7 @@ html,body{height:100%; background-color: #eee; color: #666}
 a{text-decoration:none}
 /*login*/
 .login{padding:20px;  height: 100%; background:url(../images/bg.jpg);background-size: cover;}
-.login .logincnt{position: absolute;top:50%;left:50%; margin-top: -1.2rem;margin-left:-1.4rem;}
+.login .logincnt{/*position: absolute;top:50%;left:50%; margin-left:-1.4rem;*/margin-top: 1.2rem;}
 .login .inputLogin{outline:0;background-color: rgba(255,255,255,0.2); padding: 0 0.4rem;color: #000; border: none; transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;width:100%; color:#fff;}
 .login .icon{ background: url(../images/icon.png) no-repeat; display: inline-block;position: absolute;top: 0; background-size: 0.335rem 1.36rem}
 .login .icon1{ background-position: 0 -0.08rem ; width:0.33rem; height: 0.26rem;  left: 0.05rem; top: 0.1rem}
