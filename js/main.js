@@ -32,45 +32,46 @@ m1.controller('loginCtrl',function($scope,$state,$window,local,user){
 	}		
 })
 m1.config(function($stateProvider,$urlRouterProvider){
-	$urlRouterProvider.otherwise('/')
+	
 	$stateProvider
-		.state('/',{
+		.state('login',{
 			url:'/',
-			templateUrl:'index.html',
-			cache:false,
+			templateUrl:'login.html',
+
 		})
 		.state('list',{
 			url:'/list',
 			templateUrl:'list.html',
-			cache:false
+
 		})
 		.state('detail',{
 			params:{"id":null,"img":null,"title":null,"price":null,"cnt":null},
 			url:'/detail/:img/:title/:price/:cnt',
 			templateUrl:'detail.html',
 			controller:'detailCtrl',
-			cache:false
+	
 		})
 		.state('cart',{
 			url:'/cart',
 			templateUrl:'cart.html',
-			cache:false
+	
 		})
 		.state('my',{
 			url:'/my/:adds',
 			templateUrl:'my.html',
-			cache:false
+
 		})
 		.state('addres',{
 			url:'/addres',
 			templateUrl:'addres.html',
-			cache:false
+
 		})
 		.state('addresList',{
 			url:'/addresList/:id/:index',
 			templateUrl:'addresList.html',
-			cache:false
+	
 		})
+		$urlRouterProvider.otherwise('/');
 }).run(function($rootScope,$state){
             $rootScope.$state = $state;
        })
