@@ -145,18 +145,10 @@ m1.controller('detailCtrl',function($scope,local,$state,$stateParams){
 		$state.go('cart',{reload:true})
 	}
 })
-m1.directive('pageHeader',function(){
-	return {
-
-restrict: 'AE' ,
-
-replace: 'true' ,
-
-template: '<h3>Hello World!!</h3>'
-
-};
-
-
+m1.directive('runoobDirective',function(){
+	return{
+		template : "<h1>自定义指令!</h1>"
+	}
 })
 m1.directive('pageFooter',function(){
 	return{
