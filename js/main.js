@@ -148,7 +148,8 @@ m1.controller('detailCtrl',function($scope,local,$state,$stateParams){
 m1.directive('topDirective',function(){
 	return{
 		restrict:'AE',
-		templateUrl : 'header.html'
+		templateUrl : 'header.html',
+		replace:true
 	}
 })
 m1.directive('bottomDirective',function(){
