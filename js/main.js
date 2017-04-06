@@ -42,7 +42,7 @@ m1.config(function($stateProvider,$urlRouterProvider){
 		.state('list',{
 			url:'/list',
 			templateUrl:'list.html',
-
+			controller:'list'
 		})
 		.state('detail',{
 			params:{"id":null,"img":null,"title":null,"price":null,"cnt":null},
