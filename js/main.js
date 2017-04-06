@@ -32,7 +32,7 @@ m1.controller('loginCtrl',function($scope,$state,$window,local,user){
 	}		
 })
 m1.config(function($stateProvider,$urlRouterProvider){
-	$urlRouterProvider.otherwise('/login');
+	$urlRouterProvider.otherwise('/');
 	$stateProvider
 		.state('login',{
 			url:'/',
