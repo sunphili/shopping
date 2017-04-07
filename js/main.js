@@ -145,16 +145,23 @@ m1.controller('detailCtrl',function($scope,local,$state,$stateParams){
 		$state.go('cart',{reload:true})
 	}
 })
-m1.directive('runoobDirective',function(){
+m1.directive('pageHeader',function(){
 	return{
 		restrict:'AE',
-		templateUrl : 'header.html'
+		template : '<div class="navbar navbar-fixed-top bg-green">'+
+					'<h4 class="text-center">购物车</h4></div>'
 	}
 })
 m1.directive('pageFooter',function(){
 	return{
 		restrict:'AE',
-		templateUrl :'footer.html',
+		template :'<div class="navbar navbar-fixed-bottom ">'+
+	'<ul class="nav">'+
+		'<li><a ui-sref="list" ui-sref-active="active">首页</a></li>'+
+		'<li><a ui-sref="cart" ui-sref-active="active">购物车</a></li>'+
+		'<li><a ui-sref="my" ui-sref-active="active">我的</a></li>'+
+	'</ul>'
+</div>',
 		replace:true
 	}
 })
