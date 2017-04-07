@@ -160,8 +160,8 @@ m1.directive('pageFooter',function(){
 		'<li><a ui-sref="list" ui-sref-active="active">首页</a></li>'+
 		'<li><a ui-sref="cart" ui-sref-active="active">购物车</a></li>'+
 		'<li><a ui-sref="my" ui-sref-active="active">我的</a></li>'+
-	'</ul>'
-</div>',
+	'</ul></div>'
+	,
 		replace:true
 	}
 })
